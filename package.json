@@ -1,0 +1,37 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "A modern full-stack online store application built with React (TypeScript) frontend and FastAPI (Python) backend, using SQLite database.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "playwright test --project=api-tests",
+    "test:db": "playwright test --project=database-tests",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "start:backend": "cd backend && source venv/bin/activate && uvicorn main:app --reload --host 0.0.0.0 --port 8000",
+    "start:frontend": "cd frontend && npm start",
+    "setup": "cd frontend && npm install && cd ../backend && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && python seed_data.py",
+    "seed": "cd backend && source venv/bin/activate && python seed_data.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CScharer/cursor_example.git"
+  },
+  "keywords": [],
+  "author": "Christopher Scharer <ChrisScharer1416@msn.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CScharer/cursor_example/issues"
+  },
+  "homepage": "https://github.com/CScharer/cursor_example#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2"
+  }
+}
