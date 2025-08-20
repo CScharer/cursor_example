@@ -176,6 +176,62 @@ curl -X POST http://localhost:8000/orders \
   }'
 ```
 
+## 🧪 Testing
+
+This project includes comprehensive API and database tests using Playwright with TypeScript.
+
+### Running Tests
+
+1. **Install test dependencies** (if not already done):
+   ```bash
+   npm install
+   npx playwright install
+   ```
+
+2. **Run all tests**:
+   ```bash
+   npm test
+   ```
+
+3. **Run specific test suites**:
+   ```bash
+   npm run test:api      # API endpoint tests
+   npm run test:db       # Database integration tests
+   ```
+
+4. **Run tests with browser UI** (for debugging):
+   ```bash
+   npm run test:headed
+   ```
+
+5. **Debug tests**:
+   ```bash
+   npm run test:debug
+   ```
+
+6. **View test reports**:
+   ```bash
+   npm run test:report
+   ```
+
+### Test Coverage
+
+- **Products API**: CRUD operations, validation, error handling
+- **Orders API**: Order creation, stock management, validation
+- **Database Integration**: Data consistency, transactions, referential integrity
+- **Edge Cases**: Concurrent orders, stock limits, invalid data
+
+### Test Structure
+
+```
+tests/
+├── products.api.spec.ts    # Product endpoint tests
+├── orders.api.spec.ts      # Order endpoint tests
+├── database.db.spec.ts     # Database integration tests
+└── helpers/
+    └── test-utils.ts       # Test utility functions
+```
+
 ## 🚀 Deployment
 
 ### Frontend
